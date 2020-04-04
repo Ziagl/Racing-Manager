@@ -1,0 +1,23 @@
+update driver set wage = 0;
+update driver set wage = 1000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 49;
+update driver set wage = 2000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 54;
+update driver set wage = 3000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 59;
+update driver set wage = 4000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 64;
+update driver set wage = 5000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 69;
+update driver set wage = 6000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 74;
+update driver set wage = 7000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 79;
+update driver set wage = 8000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 84;
+update driver set wage = 9000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 89;
+update driver set wage = 10000000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 94;
+
+update driver set bonus = 0;
+update driver set bonus = 3000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 49;
+update driver set bonus = 3500 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 54;
+update driver set bonus = 4000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 59;
+update driver set bonus = 4500 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 64;
+update driver set bonus = 5000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 69;
+update driver set bonus = 5500 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 74;
+update driver set bonus = 6000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 79;
+update driver set bonus = 6500 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 84;
+update driver set bonus = 7000 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 89;
+update driver set bonus = 7500 where ((speed + persistence + experience + stamina + freshness + morale) / 6) > 94;

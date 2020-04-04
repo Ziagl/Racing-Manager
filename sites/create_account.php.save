@@ -1,0 +1,194 @@
+<?php
+    include_once('lib/securimage/securimage.php');
+
+    include_once('lib/phpmailer/class.phpmailer.php');
+    $db_ftd = clone $db;	//phpbb also uses $db so we ned to clone this object
+    if($phpbb_root_path != '')	//path comes from config.inc.php
+	{
+		define('IN_PHPBB', true);
+		$phpEx = substr(strrchr(__FILE__, '.'), 1);
+		include_once($phpbb_root_path . 'common.'.$phpEx);
+		include_once($phpbb_root_path . 'includes/functions_user.'.$phpEx);
+		if($request)
+			$request->enable_super_globals(); //for phpbb >= 3.1.x
+	}
+
+    $securimage = new Securimage();
+
+    $email = null;
+	$username = null;
+    $error = null;
+    
+    if(isset($_GET['id_code']))
+    {
+	    $ok = $db_ftd->activateAccount($_GET['id_code']);
+	    if($ok)
+	    {
+		    header('Location: ?site=login');
+		    die();
+	    }
+	    else
+	    {
+	    	$_SESSION['dialog_title'] = "tr_activateerror_title";
+			$_SESSION['dialog_text'] = "tr_activateerror_title";
+		    header('Location: ?site=waitforteam');
+            die();
+	    }
+    }
+	
+	//process form
+	if(isset($_POST['email']) && strcmp($_POST['email'],'') != 0)
+	{
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        
+        //check if username already exists
+        if($db_ftd->checkUsernameDuplicate($username))
+        {
+	        //check if email already exists
+			if($db_ftd->checkEmailDuplicate($email))
+			{
+				
+		        if(isset($_POST['password']) && strcmp($_POST['password'],'') != 0)
+		        {
+		            if(strcmp($_POST['password'], $_POST['password2']) == 0)
+		            {
+		                //captcha check
+		                if ($securimage->check($_POST['captcha_code']) == true)
+		                {
+		                	$phpbb_user_id = null;
+		                	
+		                	//create phpbb account
+		                	if($phpbb_root_path != '')	//path comes from config.inc.php
+		                	{
+		                		$user_actkey = md5(rand(0, 100) . time());
+		                		$user_actkey = substr($user_actkey, 0, rand(8, 12));
+		                		$timezone = 1;
+		                		
+								$user_row = array(
+									'username'              => $username,
+									'user_password'         => phpbb_hash($_POST['password']),
+									'user_email'            => $email,
+									'group_id'              => $phpbb_group_id,
+									'user_timezone'         => (float) $timezone,
+									'user_lang'             => $language,
+									'user_type'             => USER_NORMAL,
+									'user_actkey'           => $user_actkey,
+									'user_regdate'          => time(),
+								);
+								
+								// all the information has been compiled, add the user
+								// tables affected: users table, profile_fields_data table, groups table, and config table.
+								$phpbb_user_id = user_add($user_row);
+		                	}
+		                	
+		                    //create account
+		                    $id_code = generatePassword(10, 3);
+		                    $ret = $db_ftd->createAccount($email,$_POST['password'],$username,$id_code,$phpbb_user_id);
+		                    switch($ret)
+		                    {
+		                        case 0:
+		                            $host  = $_SERVER['HTTP_HOST'];
+		                            $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+		                            
+		                            $mail_text_array = array();
+		                            $mail_template = file_get_contents("templates_mail/account_create.htm");
+		                            $mail_text_array[0] = Translator::_translate('email_header');
+		                            $mail_text_array[1] = Translator::_translate('email_text1');
+		                            $mail_text_array[2] = Translator::_translate('email_text2');
+		                            $mail_text_array[3] = 'http://'.$host.$uri.'/?site=create_account&id_code='.$id_code;
+		                            $mail_text_array[4] = Translator::_translate('email_link_text');
+		                            $mail_text_array[5] = Translator::_translate('email_contact');
+		                            $mail_text_array[6] = Translator::_translate('email_unsubscribe');
+		                            $mail_text_array[7] = Translator::_translate('email_link_to_game');
+		                            $mail_text_array[8] = Translator::_translate('email_quote_'.rand(0, 10));
+		                            $mail_text_array[9] = 'http://'.$host.$uri.'/?site=unsubscribe&email='.base64_encode($email).'&land='.$language;	//unsibscribe link
+		                            $mail_text_array[10] = Translator::_translate('email_link_to_facebook');
+		                            $mail_text_array[11] = Translator::_translate('email_link_to_twitter');
+		                            
+		                            $array_size = count($mail_text_array);
+		                            for($i = 0; $i < $array_size; ++$i)
+		                            {
+		                            	$mail_template = str_replace("%".($i + 1)."%", $mail_text_array[$i], $mail_template);
+		                            }
+		                            
+		                            //$mail = new PHPMailer();
+		                            $message = $mail_template;
+		                            /*if($smtp_host)
+		                            {
+						$mail->IsSMTP();
+						$mail->SMTPDebug = true;
+						$mail->SMTPSecure = "tls";
+						$mail->SMTPAuth = true;
+						$mail->Host = $smtp_host;
+						$mail->Port = $smtp_port;
+						$mail->Username = $smtp_username;
+						$mail->Passwort = $smtp_password;
+		                            }
+		                            
+		                            $mail->From = 'admin@racing-manager.com';
+		                            $mail->FromName = Translator::_translate('tr_create_account_email_subject');
+		                            $mail->AddAddress($email);
+		                            $mail->AddBCC($admin_mail);
+		                            $mail->Subject = Translator::_translate('tr_create_account_email_subject');
+		                            $mail->Body = $message;
+		                            $mail->IsHTML(true);
+		                            $mail->CharSet = 'utf-8';
+		                            
+					    if($mail->Send())
+		                            {*/
+		                                unset($_POST['email']);
+		                                unset($_POST['password']);
+		                                unset($_POST['username']);
+		                                $_SESSION['dialog_title'] = "tr_accountmailsent_title";
+						$_SESSION['dialog_text'] = "tr_accountmailsent_text";
+		                                header('Location: ?site=waitforteam');
+		                                die();
+		                            }
+		                            else
+		                            {
+		                                $error = Translator::_translate('tr_create_account_general_email_error'); break;
+		                            }
+		                            break;
+		                        case -1: $error = Translator::_translate('tr_create_account_general_account_error'); break;
+		                        case -2: $error = Translator::_translate('tr_create_account_email_already_in_use'); break;
+		                    }
+		                }
+		                else
+		                {
+		                    //captcha false
+		                    $error = Translator::_translate('tr_create_account_security_code_incorrect');
+		                }
+		            }
+		            else
+		            {
+		                //password not equal
+		                $error = Translator::_translate('tr_create_account_passwords_not_equal');
+		            }
+		        }
+		        else
+		        {
+		            //password not set
+		            $error = Translator::_translate('tr_login_password_not_set');
+		        }
+	        }
+	        else
+	        {
+		        //email already exists
+		        $error = Translator::_translate('tr_login_email_already_exists');
+	        }
+        }
+        else
+        {
+	        //username already exists
+	        $error = Translator::_translate('tr_login_username_already_exists');
+        }
+	}
+	
+	$track['weather'] = 100;
+
+    $smarty->assign('track', $track);
+	$smarty->assign('username', $username);
+	$smarty->assign('email', $email);
+    $smarty->assign('error', $error);
+	$smarty->assign('content', 'create_account.tpl');

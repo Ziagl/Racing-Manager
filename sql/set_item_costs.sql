@@ -1,0 +1,110 @@
+#Karosserie
+update item set value = 600000 where type = 0 and class = 1;
+update item set value = 1200000 where type = 0 and class = 2;
+update item set value = 1800000 where type = 0 and class = 3;
+update item set value = 2400000 where type = 0 and class = 4;
+update item set value = 3000000 where type = 0 and class = 5;
+update item set value = 3600000 where type = 0 and class = 6;
+update item set value = 4200000 where type = 0 and class = 7;
+update item set value = 4800000 where type = 0 and class = 8;
+update item set value = 5400000 where type = 0 and class = 9;
+update item set value = 6000000 where type = 0 and class = 10;
+#Bremsen
+update item set value = 525000 where type = 1 and class = 1;
+update item set value = 1050000 where type = 1 and class = 2;
+update item set value = 1575000 where type = 1 and class = 3;
+update item set value = 2100000 where type = 1 and class = 4;
+update item set value = 2625000 where type = 1 and class = 5;
+update item set value = 3150000 where type = 1 and class = 6;
+update item set value = 3675000 where type = 1 and class = 7;
+update item set value = 4200000 where type = 1 and class = 8;
+update item set value = 4725000 where type = 1 and class = 9;
+update item set value = 5250000 where type = 1 and class = 10;
+#Motor
+update item set value = 900000 where type = 2 and class = 1;
+update item set value = 1800000 where type = 2 and class = 2;
+update item set value = 2700000 where type = 2 and class = 3;
+update item set value = 3600000 where type = 2 and class = 4;
+update item set value = 4500000 where type = 2 and class = 5;
+update item set value = 5400000 where type = 2 and class = 6;
+update item set value = 6300000 where type = 2 and class = 7;
+update item set value = 7200000 where type = 2 and class = 8;
+update item set value = 8100000 where type = 2 and class = 9;
+update item set value = 9000000 where type = 2 and class = 10;
+#Aerodynamik
+update item set value = 300000 where type = 3 and class = 1;
+update item set value = 600000 where type = 3 and class = 2;
+update item set value = 900000 where type = 3 and class = 3;
+update item set value = 1200000 where type = 3 and class = 4;
+update item set value = 1500000 where type = 3 and class = 5;
+update item set value = 1800000 where type = 3 and class = 6;
+update item set value = 2100000 where type = 3 and class = 7;
+update item set value = 2400000 where type = 3 and class = 8;
+update item set value = 2700000 where type = 3 and class = 9;
+update item set value = 3000000 where type = 3 and class = 10;
+#Elektrik
+update item set value = 210000 where type = 4 and class = 1;
+update item set value = 420000 where type = 4 and class = 2;
+update item set value = 630000 where type = 4 and class = 3;
+update item set value = 840000 where type = 4 and class = 4;
+update item set value = 1050000 where type = 4 and class = 5;
+update item set value = 1260000 where type = 4 and class = 6;
+update item set value = 1470000 where type = 4 and class = 7;
+update item set value = 1680000 where type = 4 and class = 8;
+update item set value = 1890000 where type = 4 and class = 9;
+update item set value = 2100000 where type = 4 and class = 10;
+#Aufhängung
+update item set value = 150000 where type = 5 and class = 1;
+update item set value = 300000 where type = 5 and class = 2;
+update item set value = 450000 where type = 5 and class = 3;
+update item set value = 600000 where type = 5 and class = 4;
+update item set value = 750000 where type = 5 and class = 5;
+update item set value = 900000 where type = 5 and class = 6;
+update item set value = 1050000 where type = 5 and class = 7;
+update item set value = 1200000 where type = 5 and class = 8;
+update item set value = 1350000 where type = 5 and class = 9;
+update item set value = 1500000 where type = 5 and class = 10;
+#Getriebe
+update item set value = 300000 where type = 6 and class = 1;
+update item set value = 600000 where type = 6 and class = 2;
+update item set value = 900000 where type = 6 and class = 3;
+update item set value = 1200000 where type = 6 and class = 4;
+update item set value = 1500000 where type = 6 and class = 5;
+update item set value = 1800000 where type = 6 and class = 6;
+update item set value = 2100000 where type = 6 and class = 7;
+update item set value = 2400000 where type = 6 and class = 8;
+update item set value = 2700000 where type = 6 and class = 9;
+update item set value = 3000000 where type = 6 and class = 10;
+#Hydraulik
+update item set value = 150000 where type = 7 and class = 1;
+update item set value = 300000 where type = 7 and class = 2;
+update item set value = 450000 where type = 7 and class = 3;
+update item set value = 600000 where type = 7 and class = 4;
+update item set value = 750000 where type = 7 and class = 5;
+update item set value = 900000 where type = 7 and class = 6;
+update item set value = 1050000 where type = 7 and class = 7;
+update item set value = 1200000 where type = 7 and class = 8;
+update item set value = 1350000 where type = 7 and class = 9;
+update item set value = 1500000 where type = 7 and class = 10;
+#Kers
+update item set value = 225000 where type = 8 and class = 1;
+update item set value = 450000 where type = 8 and class = 2;
+update item set value = 675000 where type = 8 and class = 3;
+update item set value = 900000 where type = 8 and class = 4;
+update item set value = 1125000 where type = 8 and class = 5;
+update item set value = 1350000 where type = 8 and class = 6;
+update item set value = 1575000 where type = 8 and class = 7;
+update item set value = 1800000 where type = 8 and class = 8;
+update item set value = 2025000 where type = 8 and class = 9;
+update item set value = 2250000 where type = 8 and class = 10;
+#DRS
+update item set value = 150000 where type = 9 and class = 1;
+update item set value = 300000 where type = 9 and class = 2;
+update item set value = 450000 where type = 9 and class = 3;
+update item set value = 600000 where type = 9 and class = 4;
+update item set value = 750000 where type = 9 and class = 5;
+update item set value = 900000 where type = 9 and class = 6;
+update item set value = 1050000 where type = 9 and class = 7;
+update item set value = 1200000 where type = 9 and class = 8;
+update item set value = 1350000 where type = 9 and class = 9;
+update item set value = 1500000 where type = 9 and class = 10;

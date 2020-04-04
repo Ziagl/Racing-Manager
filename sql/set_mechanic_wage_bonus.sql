@@ -1,0 +1,23 @@
+update mechanic set wage = 0;
+update mechanic set wage = 31250 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 49;
+update mechanic set wage = 62500 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 54;
+update mechanic set wage = 93750 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 59;
+update mechanic set wage = 125000 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 64;
+update mechanic set wage = 156250 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 69;
+update mechanic set wage = 187500 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 74;
+update mechanic set wage = 218750 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 79;
+update mechanic set wage = 250000 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 84;
+update mechanic set wage = 281250 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 89;
+update mechanic set wage = 312500 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 94;
+
+update mechanic set bonus = 0;
+update mechanic set bonus = 300 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 49;
+update mechanic set bonus = 600 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 54;
+update mechanic set bonus = 900 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 59;
+update mechanic set bonus = 1200 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 64;
+update mechanic set bonus = 1500 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 69;
+update mechanic set bonus = 1800 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 74;
+update mechanic set bonus = 2100 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 79;
+update mechanic set bonus = 2400 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 84;
+update mechanic set bonus = 2700 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 89;
+update mechanic set bonus = 3000 where ((pit_stop + development + tires + setup + repair + morale) / 6) > 94;

@@ -1,0 +1,527 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+
+/* Template changes */
+.page-header.navbar .top-menu-left {
+  margin: 0;
+  padding: 0;
+  float: left;
+  color: white;
+}
+
+.row{
+	margin-left: 0px;/*-15px*/
+    margin-right: 0px;/*-15px*/
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    min-height: 1px;
+    padding-left: 0px;/*15px;*/
+    padding-right: 0px;/*15px;*/
+    position: relative;
+}
+
+.portlet {
+    clear: both;
+    margin-bottom: 0px;/*25px;*/
+    margin-top: 0;
+    padding: 0;
+}
+
+.page-sidebar .sidebar-toggler,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-toggler {
+  display: block;
+  cursor: pointer;
+  opacity: 1.0;/*0.7;*/
+  filter: alpha(opacity=70);
+  width: 30px;
+  height: 27px;
+  margin-top: 0px;/*15px;*/
+  margin-right: 0px;/*19px;*/
+  float: right;
+}
+
+.page-content-wrapper .page-content {
+    margin-left: 235px;
+    margin-top: 0;
+    min-height: 600px;
+    padding: 0px !important;/*25px 20px 10px;*/
+}
+
+/* Custom enhancements */
+
+tr.safetycar td{
+	background-color: #F7FF7C !important;
+}
+
+tr.line_highlight td{
+	/*background-color: #E3A21A !important;*/
+	background-color: #AAAAAA !important;
+	color: #000000 !important;
+}
+
+tr.ascender td{
+	background-color: #81ff00 !important;
+	color: #000000 !important;
+}
+
+tr.descender td{
+	background-color: #ff0000 !important;
+	color: #000000 !important;
+}
+
+.winner_first{
+	text-align: center;
+}
+
+.winner_second{
+	text-align: center;
+	padding-top: 40px;
+}
+
+.winner_third{
+	text-align: center;
+	padding-top: 80px;
+}
+
+.driver_value{
+	font-size: 30px;
+	margin: 20px 0;	
+}
+
+.car_value{
+	font-size: 30px;
+	margin: 20px 0;
+}
+
+.value_red{
+	font-weight: bold;
+	color: #ff0000;
+}
+.value_orange{
+	font-weight: bold;
+	color: #ff9200;
+}
+.value_yellow{
+	font-weight: bold;
+	color: #ffea00;
+}
+.value_yellowgreen{
+	font-weight: bold;
+	color: #81ff00;
+}
+.value_green{
+	font-weight: bold;
+	color: #27ff00;
+}
+
+.slider_black .ui-widget-header { background: black; }
+.slider_darkgreen .ui-widget-header { background: darkgreen; }
+.slider_lightgreen .ui-widget-header { background: lightgreen; }
+.slider_darkblue .ui-widget-header { background: darkblue; }
+.slider_lightblue .ui-widget-header { background: lightblue; }
+.slider_orange .ui-widget-header { background: orange; }
+.slider_yellow .ui-widget-header { background: yellow; }
+.slider_red .ui-widget-header { background: red; }
+
+.input-large { width: 100% !important; }
+
+td.pit_stop_marker { background-color: blue !important; }
+tr.safetycar td.pit_stop_marker { background-color: blue !important; }
+td.fastest_time_marker { background-color: lightgreen !important; }
+tr.line_highlight td.fastest_time_marker { background-color: lightgreen !important; }
+tr.safetycar td.fastest_time_marker { background-color: lightgreen !important; }
+
+progress,          /* All HTML5 progress enabled browsers */
+progress[role]     /* polyfill */
+{
+	/* Turns off styling - not usually needed, but good to know. */
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	/* gets rid of default border in Firefox and Opera. */ 
+	border: none;
+
+	/* Needs to be in here for Safari polyfill so background images work as expected. */
+	background-size: auto;
+	background: #ffeeee !important;
+}
+progress::-webkit-progress-bar {
+    background: #ffeeee;
+}
+
+.progress-green {
+  color: green; 
+}
+.progress-green::-webkit-progress-value {
+  background-color:green;
+}
+.progress-green::-moz-progress-bar {
+  background-color:green;
+}
+
+.progress-red {
+  color: red; 
+}
+.progress-red::-webkit-progress-value {
+  background-color:red;
+}
+.progress-red::-moz-progress-bar {
+  background-color:red;
+}
+
+.progress-orange {
+  color: orange; 
+}
+.progress-orange::-webkit-progress-value {
+  background-color:orange
+}
+.progress-orange::-moz-progress-bar {
+  background-color:orange;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    line-height: 1;/*1.42857;*/
+}
+
+.detail_header {
+	margin-top: -15px;
+}
+
+p {
+	text-align: justify;
+}
+
+td.mobile_visible {
+	text-indent: -999999px;
+	white-space: nowrap;
+}
+
+.desktop_slider {
+	display: block;
+}
+
+.mobile_slider {
+	display: none;
+}
+
+tr.table_striped_two_lines td {
+	 background-color: #f9f9f9;
+}
+
+/* line break in buttons (if there are long texts) */
+.btn {
+	white-space: normal;
+	margin: 2px;
+}
+.table .btn {
+	margin-right: 0px;
+}
+
+/*Cookie label*/
+.cookienotice-bar-bottom {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: auto;
+}
+.cookienotice-bar {
+    clear: both;
+    width: 100%;
+}
+.cookienotice-container {
+    background: none repeat scroll 0 0 #ddd;
+    font: inherit;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.cookienotice-bar .cookienotice-content {
+    width: 100%;
+}
+.cookienotice-content {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.cookienotice-message {
+    text-align: center;
+    font-size: 10px;
+}
+
+
+.cookienotice-button-container {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.cookienotice-button { cursor: pointer; }
+
+.padding-side{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.header_first { margin-top:15px;margin-right:10px; }
+.header_second { margin-top:15px; }
+
+/*iPad Portrait*/
+@media handheld and (max-width: 767px), screen and (max-device-width: 750px), screen and (max-width: 960px)  {
+	.desktop_slider { display: none; }
+	
+	.manager_race { display: none; }
+	.mobile_slider { display: block; }
+	
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+		padding: 2px;
+	}
+	
+	td[rowspan] { vertical-align: top; }
+	
+	.page-sidebar, .page-sidebar.in { margin: 0px !important; }
+	
+	.header_first { margin-top:15px;margin-right:10px; }
+	.header_second { margin-top:15px; }
+}
+
+/*iPhone6 Landscape*/
+@media screen and (max-width: 667px), screen and (max-device-width: 667px), screen and (max-width: 767px)  {
+	.desktop_slider { display: none; }
+	
+	.mobile_slider { display: block; }
+	
+	.manager_race { display: none; }
+	.mobile_invisible_high { display: none; }
+	.mobile_invisible_low { display: none; }
+	td.mobile_visible {
+		text-indent: 0px;
+		white-space: normal;
+	}
+	
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+		padding: 2px;
+	}
+	
+	/* the following 3 options are for header top and profile drop down menu*/
+	.page-header.navbar .top-menu {
+		clear: none;
+		background-color: #1f1f1f;
+		margin-right: 10px;
+	}
+	
+	.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-toggle {
+		background-color: #1f1f1f;	
+	}
+	
+	.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-toggle:hover {
+		background-color: #1f1f1f;	
+	}
+	
+	td[rowspan] { vertical-align: top; }
+	
+	.page-sidebar, .page-sidebar.in { margin: 0px !important; }
+	
+	.header_first { margin-top:5px;float: none !important }
+	.header_second { margin-top:0px; }
+}
+
+/*iPhone Landscape*/
+@media screen and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 580px)  {
+	.desktop_slider { display: none; }
+	
+	.mobile_slider { display: block; }
+	
+	.manager_race { display: none; }
+	.mobile_invisible_high { display: none; }
+	.mobile_invisible_low { display: none; }
+	td.mobile_visible {
+		text-indent: 0px;
+		white-space: normal;
+	}
+	
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+		padding: 2px;
+	}
+	
+	/* the following 3 options are for header top and profile drop down menu*/
+	.page-header.navbar .top-menu {
+		clear: none;
+		background-color: #1f1f1f;
+		margin-right: 10px;
+	}
+	
+	.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-toggle {
+		background-color: #1f1f1f;	
+	}
+	
+	.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-toggle:hover {
+		background-color: #1f1f1f;	
+	}
+	
+	td[rowspan] { vertical-align: top; }
+	
+	.page-sidebar, .page-sidebar.in { margin: 0px !important; }
+	
+	.header_first { margin-top:5px;float: none !important }
+	.header_second { margin-top:0px; }
+}
+
+/*iPhone Portrait*/
+@media screen and (max-width: 320px), screen and (max-device-width: 320px), screen and (max-width: 450px) {
+	.login .playstorelogo img {
+		width: 280px;
+	}
+	
+	.desktop_slider { display: none; }
+	
+	.mobile_slider { display: block; }
+	
+	.manager_race { display: none; }
+	.mobile_invisible_high { display: none; }
+	.mobile_invisible_low { display: none; }
+	td.mobile_visible {
+		text-indent: 0px;
+		white-space: normal;
+	}
+	
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+		padding: 2px;
+	}
+	
+	/* the following 3 options are for header top and profile drop down menu*/
+	.page-header.navbar .top-menu {
+		clear: none;
+		background-color: #1f1f1f;
+		margin-right: 10px;
+	}
+	
+	.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-toggle {
+		background-color: #1f1f1f;	
+	}
+	
+	.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-toggle:hover {
+		background-color: #1f1f1f;	
+	}
+	
+	td[rowspan] { vertical-align: top; }
+	
+	.login .content h3 { font-size: 17px; }
+		
+	.page-sidebar, .page-sidebar.in { margin: 0px !important; }
+	
+	.header_first { margin-top:5px;float: none !important }
+	.header_second { margin-top:0px; }
+}
+
+/*remove border of boxes*/
+.portlet.box.green { border-width: 0px; }
+.portlet.box.green-meadow { border-width: 0px; }
+.portlet.box.red { border-width: 0px; }
+.portlet.box.blue-hoki { border-width: 0px; }
+.portlet.box.yellow-saffron { border-width: 0px; }
+.portlet.box.grey-silver { border-width: 0px; }
+.portlet.box.blue-steel { border-width: 0px; }
+
+/*colors for menu*/
+.statistic_color { color: #67809f !important; }
+.race_color { color: #d84a38 !important; }
+.finance_color { color: #f4d03f !important; }
+.car_color { color: #bfbfbf !important; }
+.mechanic_color { color: #1bbc9b !important }
+.driver_color { color: #35aa47 !important }
+.forum_color { color: #f00 !important }
+.tippspiel_color { color: #00f !important }
+.tutorial_color { color: #fff !important }
+
+.forum {
+	background-color: #444;
+}
+
+.legende .color-box {
+    width: 10px;
+    height: 18px;
+    float:left;
+    margin-right:10px;
+}
+
+tr td .color-box {
+    width: 10px;
+    height: 18px;
+    float:left;
+    margin-right:10px;
+}
+
+.ui-slider-vertical .ui-slider-range-min {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+
+.nav > li > a {
+	padding: 5px 5px;
+}
+
+.portlet.box > .portlet-body {
+	padding: 2px;
+}
+
+.page-sidebar.navbar-collapse.in {
+	margin: 0px;
+}
+/* menu tab*/
+.page-sidebar .page-sidebar-menu > li.sidebar-toggler-wrapper, .page-sidebar .page-sidebar-menu > li.sidebar-search-wrapper, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.sidebar-toggler-wrapper, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.sidebar-search-wrapper {
+	display:none !important;
+}
+
+.table thead tr th {
+	font-size: 12px;
+}
+
+.nowrapping {
+	white-space: nowrap;
+}
+
+.login .socialmedia {
+    color: #999;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.login .playstorelogo {
+    padding-top: 15px;
+    text-align: center;
+}
+.login .playstoretext {
+	padding-top: 5px;
+	color: #999;
+    font-size: 13px;
+    margin: 0 auto;
+    text-align: center;
+}
+.tutorial p{
+	text-align: justify;
+}
+.tutorial li{
+	text-align: justify;
+}
