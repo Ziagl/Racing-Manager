@@ -15,7 +15,7 @@ To run this game you need a webserver. Copy the files to the webroot. Create a n
 
 ## License
 
-The game uses an old version of Metronic theme. I have a license to run this theme. If you also want to run it public, get a licence! (https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?_ga=2.186343841.962310628.1586001330-470635343.1585382770)
+The game uses an old version of Metronic theme. I have a license to run this theme. If you also want to run it in public, get a license! (https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?_ga=2.186343841.962310628.1586001330-470635343.1585382770)
 
 ## Optional
 
